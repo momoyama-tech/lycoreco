@@ -7,6 +7,11 @@
         <p class="hug" >インサイダー</p>
         <p class="tag">です。</p>
     </center>
+    <center>
+        <ion-button shape="round" >
+            OK
+        </ion-button>
+    </center>
 </main>
     <style>
         .text {
@@ -24,4 +29,13 @@
              {
                 color: black;
              }
+        ion-button {
+            margin: 0 auto;
+            display: ruby-text-container;
+            position: fixed; 
+            bottom: 20px; 
+            width: 30%; 
+
+             }
+
     </style>
