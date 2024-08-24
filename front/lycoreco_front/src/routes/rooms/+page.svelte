@@ -1,5 +1,5 @@
 <main>
-	こころ
+	くも
 </main>
 
 <style></style>
