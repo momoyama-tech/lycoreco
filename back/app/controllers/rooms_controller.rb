@@ -12,9 +12,12 @@ class RoomsController < ApplicationController
     }
     chat_gpt_service = ChatGptService.new
     result_message = chat_gpt_service.chat(messages)
+    render json: {
+      result_message: result_message
+    }
   end
 
   def index
-    Room.all
+    render json: Room.all
   end
 end
