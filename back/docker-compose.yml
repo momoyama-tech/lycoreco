@@ -11,8 +11,8 @@ services:
       - db
     stdin_open: true
     tty: true
-    environment:
-      DATABASE_PASSWORD: password
+    env_file:
+      - .env
     ports:
       - "3000:3000"
     volumes:
