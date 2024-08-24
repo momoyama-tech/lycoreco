@@ -1,4 +1,5 @@
 class RoomsController < ApplicationController
+  protect_from_forgery
   def create
     room = Room.create
     room.room_message.create(
@@ -12,8 +13,11 @@ class RoomsController < ApplicationController
     }
     chat_gpt_service = ChatGptService.new
     result_message = chat_gpt_service.chat(messages)
+    match = result_message.match(/\{(.*?)\}/)
+    content = match[1] if match
+    room.update(answer_word: content)
     render json: {
-      result_message: result_message
+      room_id: room.id
     }
   end
 

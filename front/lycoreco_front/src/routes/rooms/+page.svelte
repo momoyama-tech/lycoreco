@@ -5,8 +5,27 @@
 	function goToRoom(roomId) {
 		window.location.href = `/game/${roomId}`;
 	}
+	async function createRoom() {
+		try {
+			const response = await fetch('http://localhost:3000/rooms', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				}
+			});
+
+			if (response.ok) {
+				const newRoom = await response.json();
+				console.log('Room created:', newRoom.room_id);
+				window.location.href = `/game/${newRoom.room_id}`;
+			} else {
+				console.error('Failed to create room:', response.statusText);
+			}
+		} catch (error) {
+			console.error('Error creating room:', error);
+		}
+	}
 	export let data;
-	console.log(data.props.rooms);
 </script>
 
 <main>
@@ -21,7 +40,7 @@
 			{#each data.props.rooms as room}
 				<ion-card on:click={() => goToRoom(room.id)}>
 					<ion-card-header>
-						<ion-card-title>ルーム{room.name}</ion-card-title>
+						<ion-card-title>ルーム{room.id}</ion-card-title>
 					</ion-card-header>
 				</ion-card>
 			{/each}
@@ -30,7 +49,7 @@
 		{/if}
 	</div>
 	<center>
-		<ion-button shape="round"> ＋ </ion-button>
+		<ion-button shape="round" on:click={createRoom}> ＋ </ion-button>
 	</center>
 </main>
 
