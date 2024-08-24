@@ -1,0 +1,27 @@
+<main>
+    <center>
+        <h1>ロール確認</h1>
+    </center>
+    <center class="text">
+        <p class="tag" >あなたは、</p>
+        <p class="hug" >インサイダー</p>
+        <p class="tag">です。</p>
+    </center>
+</main>
+    <style>
+        .text {
+            margin: 0 auto;
+            display: block;
+            color: red;
+            position: absolute; 
+            top: 33%;
+            text-align: center;
+            width: 100%;
+            font-size: 50px;
+            line-height: 12px;
+             }
+             .tag
+             {
+                color: black;
+             }
+    </style>
