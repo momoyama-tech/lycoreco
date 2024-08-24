@@ -1,3 +1,10 @@
+<script>
+	function onclick() {
+		window.location.href = '/rooms';
+	}
+</script>
+
+
 <main>
     <ion-header>
         <ion-button {onclick} size="small" class="back_button" fill="clear">←</ion-button>
