@@ -1,0 +1,9 @@
+{
+	"webDir": "build",
+	"appId": "lycoreco_front.ionic.io",
+	"appName": "lycoreco_front",
+	"_server": {
+		"url": "http://172.18.217.143:5173/",
+		"cleartext": true
+	}
+}
