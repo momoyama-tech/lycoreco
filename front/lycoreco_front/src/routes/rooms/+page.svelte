@@ -49,14 +49,15 @@
 		{/if}
 	</div>
 	<center>
-		<ion-button shape="round" on:click={createRoom}> ＋ </ion-button>
+		<ion-button shape="round" on:click={createRoom}>部屋作成</ion-button>
 	</center>
 </main>
 
 <style>
-	ion-botton {
-		text-align: center;
-		position: absolute;
+	ion-button {
+		height: 100px;
+		width: 200px;
+		font-size: 30px;
 	}
 	.room_list {
 		overflow-y: auto;

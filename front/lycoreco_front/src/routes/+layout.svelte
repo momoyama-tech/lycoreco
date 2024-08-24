@@ -45,3 +45,9 @@
 <ion-app>
 	<slot />
 </ion-app>
+
+<style>
+	ion-app {
+		background-color: #e94d15;
+	}
+</style>

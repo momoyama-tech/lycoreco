@@ -1,43 +1,48 @@
+<script>
+	function goToRooms() {
+		window.location.href = `/rooms`;
+	}
+</script>
+
 <main>
-	<p class="text">Title</p>
-	<h3 class="tamago">Playing games and voice chat</h3>
-	<center>
-        <ion-button shape="round">
-            Play now!
-        </ion-button>
-    </center>
-	<img src="supanyan.png">
+	<div class="logo">
+		<img src="./supanyan.png" />
+	</div>
+	<p class="text">スパにゃんの<br />秘密のお友達</p>
+	<p class="subtext">温泉インサイダー</p>
+	<div class="next">
+		<ion-button shape="round" color="warning" on:click={() => goToRooms()}>遊ぶ!</ion-button>
+	</div>
 </main>
 
 <style>
-	 .text {
-        margin: 0 auto;
-        display: block;
-	    position: absolute; 
-        top: 50%;
-    	text-align: center;
-    	width: 100%;
-        font-size: 50px;
-        line-height: 12px;
-		font-weight: bold;
-             }
-	.tamago {
-		margin: 0 auto;
-        display: block;
-	    position: absolute; 
-        top: 55%;
-    	text-align: center;
-    	width: 100%;
-        line-height: 12px;
+	.logo {
+		text-align: center;
+		margin-top: 30%;
+	}
+	.logo img {
+		height: 400px;
+	}
+	.text {
+		margin-top: -50px;
+		display: block;
+		text-align: center;
+		font-size: 50px;
+		line-height: 50px;
 		font-weight: bold;
 	}
+	.subtext {
+		margin-top: -40px;
+		display: block;
+		text-align: center;
+		font-weight: bold;
+	}
+	.next {
+		text-align: center;
+	}
 	ion-button {
-            margin: 0 auto;
-            display: ruby-text-container;
-            position: fixed; 
-            bottom: 20px; 
-            width: 30%; 
-
-             }
-
+		height: 100px;
+		width: 200px;
+		font-size: 40px;
+	}
 </style>
