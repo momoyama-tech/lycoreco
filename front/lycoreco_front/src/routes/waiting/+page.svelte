@@ -2,6 +2,9 @@
 	function onclick() {
 		window.location.href = '/rooms';
 	}
+	function onClick() {
+		window.location.href = '/role';
+	}
 	export let buttonText = 'ゲームスタート！';
 </script>
 
@@ -30,7 +33,7 @@
 			<ion-card-title>メンバー４</ion-card-title>
 		</ion-card-header>
 	</ion-card>
-	<button class="game-start-button">
+	<button {onClick} class="game-start-button">
 		{buttonText}
 	</button>
 </main>
