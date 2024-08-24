@@ -1,6 +1,6 @@
 <script>
 	function onclick() {
-		window.location.href = '/rooms';
+		window.location.href = '/';
 	}
 </script>
 
