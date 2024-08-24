@@ -8,7 +8,12 @@ class RoomChannel < ApplicationCable::Channel
     # Any cleanup needed when channel is unsubscribed
   end
 
-  def game
-    ActionCable.server.broadcast('room_channel', {message: 'hello'})
+  def receive(data)    
+    # データを処理し、必要に応じてブロードキャストする
+    ActionCable.server.broadcast("room_channel", data)
+  end
+
+  def game(data)
+    ActionCable.server.broadcast('room_channel', {message: data['content']+ 'やで'})
   end
 end

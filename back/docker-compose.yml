@@ -9,6 +9,8 @@ services:
     build: .
     depends_on:
       - db
+    stdin_open: true
+    tty: true
     environment:
       DATABASE_PASSWORD: password
     ports:
