@@ -2,6 +2,7 @@
 	function onclick() {
 		window.location.href = '/rooms';
 	}
+	export let buttonText = 'ゲームスタート！';
 </script>
 
 <main>
@@ -29,6 +30,9 @@
 			<ion-card-title>メンバー４</ion-card-title>
 		</ion-card-header>
 	</ion-card>
+	<button class="game-start-button">
+		{buttonText}
+	</button>
 </main>
 
 <style>
@@ -45,5 +49,24 @@
 
 	.back_button {
 		font-size: 25px;
+	}
+
+	.game-start-button {
+		position: fixed;
+		bottom: 150px; /* 画面の下から20pxの位置に固定 */
+		left: 50%;
+		transform: translateX(-50%);
+		background-color: #f7b500;
+		color: #2c2c2c;
+		border: none;
+		border-radius: 20px;
+		padding: 20px 40px;
+		font-size: 14px;
+		cursor: pointer;
+		text-align: center;
+	}
+
+	.game-start-button:hover {
+		background-color: #e5a200;
 	}
 </style>
