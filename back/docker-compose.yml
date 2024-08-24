@@ -9,8 +9,10 @@ services:
     build: .
     depends_on:
       - db
-    environment:
-      DATABASE_PASSWORD: password
+    stdin_open: true
+    tty: true
+    env_file:
+      - .env
     ports:
       - "3000:3000"
     volumes:

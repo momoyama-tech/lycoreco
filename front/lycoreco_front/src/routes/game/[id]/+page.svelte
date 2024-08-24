@@ -19,8 +19,9 @@
 				},
 
 				received(data) {
+					console.log('Received data:', data);
 					// メッセージを受信したときの処理
-					messages = [...messages, data.message];
+					messages = [...messages, { text: data.message, isMine: false }];
 				},
 
 				sendMessage(content) {
@@ -51,7 +52,6 @@
 		};
 
 		messages = [...messages, message];
-
 		subscription.sendMessage(newMessage);
 		newMessage = '';
 	}
@@ -79,9 +79,6 @@
 					<div class="message-bubble">
 						<div class="message-text">{message.text}</div>
 					</div>
-					{#if message.isMine}
-						<img src={message.avatar} alt="User Avatar" class="avatar" />
-					{/if}
 				</div>
 			{/each}
 		</ul>

@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 2024_08_24_155452) do
   end
 
   create_table "rooms", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
-    t.string "name"
     t.string "answer_word"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
