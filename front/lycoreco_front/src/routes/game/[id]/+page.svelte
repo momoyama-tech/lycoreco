@@ -1,11 +1,12 @@
 <script>
 	import { onMount, afterUpdate } from 'svelte';
 	import { createConsumer } from '@rails/actioncable';
+	import { env } from '$env/dynamic/public';
 
 	let messages = [];
 	let subscription = null;
 	onMount(() => {
-		const consumer = createConsumer('ws://localhost:3000/cable'); // WebSocketのURLを指定
+		const consumer = createConsumer(`${env.PUBLIC_BASE_WS}/cable`); // WebSocketのURLを指定
 
 		subscription = consumer.subscriptions.create(
 			{ channel: 'RoomChannel' }, // 接続するチャネルを指定

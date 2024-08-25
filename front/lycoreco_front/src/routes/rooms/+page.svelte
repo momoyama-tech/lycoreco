@@ -2,6 +2,7 @@
 	import { playerName } from '$lib/store.js';
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { env } from '$env/dynamic/public';
 
 	let name = '';
 
@@ -15,7 +16,7 @@
 	}
 	async function createRoom() {
 		try {
-			const response = await fetch('http://localhost:3000/rooms', {
+			const response = await fetch(`${env.PUBLIC_BASE_URL}/rooms`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -69,6 +70,6 @@
 	}
 	.room_list {
 		overflow-y: auto;
-		height: 60%;
+		height: 40%;
 	}
 </style>
