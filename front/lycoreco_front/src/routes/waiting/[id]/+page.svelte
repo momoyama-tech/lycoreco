@@ -4,6 +4,7 @@
 	import { createConsumer } from '@rails/actioncable';
 	import { env } from '$env/dynamic/public';
 	import { page } from '$app/stores';
+	import { goto } from '$app/navigation';
 	let subscription = null;
 	let players = [];
 	onMount(() => {
@@ -65,7 +66,7 @@
 			</ion-card-header>
 		</ion-card>
 	{/each}
-	<button class="game-start-button" on:click={() => goToGame(room.id)}>スタート！</button>
+	<button class="game-start-button" on:click={() => goToGame()}>スタート！</button>
 </main>
 
 <style>
