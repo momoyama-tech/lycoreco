@@ -75,7 +75,7 @@
 			{#each messages as message}
 				<div class="message-row {message.isMine ? 'sent' : 'received'}">
 					{#if !message.isMine}
-						<img src={message.avatar} alt="User Avatar" class="avatar" />
+						<img src="/spaicon.png" alt="" class="avatar" />
 					{/if}
 					<div class="message-bubble">
 						<div class="message-text">{message.text}</div>
