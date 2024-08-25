@@ -12,7 +12,7 @@
 		});
 	});
 	function goToRoom(roomId) {
-		goto(`/game/${roomId}`);
+		goto(`/waiting/${roomId}`);
 	}
 	async function createRoom() {
 		try {
@@ -26,7 +26,7 @@
 			if (response.ok) {
 				const newRoom = await response.json();
 				console.log('Room created:', newRoom.room_id);
-				goto(`/game/${newRoom.room_id}`);
+				goto(`/waiting/${newRoom.room_id}`);
 			} else {
 				console.error('Failed to create room:', response.statusText);
 			}
