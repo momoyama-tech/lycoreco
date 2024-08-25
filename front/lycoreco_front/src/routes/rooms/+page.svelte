@@ -1,9 +1,17 @@
 <script>
-	function onclick() {
-		window.location.href = '/';
-	}
+	import { playerName } from '$lib/store.js';
+	import { onMount } from 'svelte';
+	import { goto } from '$app/navigation';
+
+	let name = '';
+
+	onMount(() => {
+		playerName.subscribe((value) => {
+			name = value;
+		});
+	});
 	function goToRoom(roomId) {
-		window.location.href = `/game/${roomId}`;
+		goto(`/game/${roomId}`);
 	}
 	async function createRoom() {
 		try {
@@ -17,7 +25,7 @@
 			if (response.ok) {
 				const newRoom = await response.json();
 				console.log('Room created:', newRoom.room_id);
-				window.location.href = `/game/${newRoom.room_id}`;
+				goto(`/game/${newRoom.room_id}`);
 			} else {
 				console.error('Failed to create room:', response.statusText);
 			}
@@ -30,7 +38,7 @@
 
 <main>
 	<ion-header>
-		<ion-button {onclick} size="small" class="back_button" fill="clear">←</ion-button>
+		<h1>ようこそ、{name}さん！</h1>
 	</ion-header>
 	<center>
 		<h1>ルームリスト</h1>
