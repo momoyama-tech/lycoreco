@@ -21,7 +21,7 @@
 		margin-top: 30%;
 	}
 	.logo img {
-		height: 400px;
+		width: 80%;
 	}
 	.text {
 		margin-top: -50px;
