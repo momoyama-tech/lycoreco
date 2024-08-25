@@ -16,7 +16,7 @@
 	}
 	async function createRoom() {
 		try {
-			const response = await fetch(`${env.PUBLIC_BASE_URL}/rooms`, {
+			const response = await fetch(`https://d5058ded8316.ngrok.app/rooms`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'

@@ -8,7 +8,7 @@
 	let subscription = null;
 	let players = [];
 	onMount(() => {
-		const consumer = createConsumer(`${env.PUBLIC_BASE_WS}/cable`); // WebSocketのURLを指定
+		const consumer = createConsumer(`wss://d5058ded8316.ngrok.app//cable`); // WebSocketのURLを指定
 
 		subscription = consumer.subscriptions.create(
 			{ channel: 'RoomChannel' }, // 接続するチャネルを指定
@@ -31,9 +31,7 @@
 
 				received(data) {
 					console.log('Received data:', data);
-					console.log('aaaa: ', players);
 					players = [...players, data['join_player']];
-					console.log('aaaa: ', players);
 				},
 
 				sendMessage(content) {

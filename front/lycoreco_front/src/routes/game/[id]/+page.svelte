@@ -6,10 +6,10 @@
 	let messages = [];
 	let subscription = null;
 	onMount(() => {
-		const consumer = createConsumer(`${env.PUBLIC_BASE_WS}/cable`); // WebSocketのURLを指定
+		const consumer = createConsumer(`wss://d5058ded8316.ngrok.app/cable`); // WebSocketのURLを指定
 
 		subscription = consumer.subscriptions.create(
-			{ channel: 'RoomChannel' }, // 接続するチャネルを指定
+			{ channel: 'GameChannel' }, // 接続するチャネルを指定
 			{
 				connected() {
 					console.log('Connected to the channel');
